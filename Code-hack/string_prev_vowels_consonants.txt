@@ -1,0 +1,23 @@
+s=input().strip()
+s2=""
+con=0
+v=['a','e','i','o','u','A','E','I','O','U']
+s1=""
+vow =0
+for i in s:
+    if i in v:
+        if vow ==0:
+            s1+=i
+            print(i,end="")
+            vow=1
+        else:
+            print(s1[-1])
+            s1+=i
+    else:
+        if con==0:
+            print(i,end="")
+            s2+=i
+            con=1
+        else:
+            print(s2[-1],end="")
+            s2+=i
