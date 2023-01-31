@@ -1,0 +1,34 @@
+row,col=map(int,input().split())
+l=[]
+l1=[]
+l2=[]
+l3=[]
+l4=[]
+for i in range(row):
+    a=list(map(int,input().split()))
+    l.append(a)
+#The given matrix is
+print("Given matrix is")
+for m in l:
+    print(*m)
+for j in range(len(l)):
+    if(j==0):
+        l1.append(l[row-1])
+    elif j==row-1:
+        l1.append(l[0])
+    else:
+        l1.append(l[j])
+l2=list(zip(*l1))
+for k in range(len(l2)):
+    if(k==0):
+        l3.append(l2[col-1])
+    elif k==col-1:
+        l3.append(l2[0])
+    else:
+        l3.append(l2[k])
+print("After swapping rows and cols")
+l4=list(zip(*l3))
+for i in l4:
+    print(*i)
+    
+    
