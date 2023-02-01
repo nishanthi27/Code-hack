@@ -1,0 +1,56 @@
+#include<stdio.h>
+int main()
+{
+    int row,col,k=0;
+scanf("%d %d",&row,&col);
+int mat[row][col],rowlow=0,rowup=row-1,collow=0,colup=col-1,arr[20];
+for(int i=0;i<row;i++)
+{
+    for(int j=0;j<col;j++)
+    {
+        scanf("%d",&mat[i][j]);
+    }
+}
+for(int i=0;i<row;i++)
+{
+    for(int j=0;j<col;j++)
+    {
+        printf("%d ",mat[i][j]);
+        
+    }
+    printf("\n");
+}
+do
+{
+    if(collow<=colup)
+    {
+    for(int i=rowlow;i<=rowup;i++)
+    {
+        arr[k++]=mat[i][collow];
+    }
+    printf("\n");
+    collow+=1;
+    }
+    if(collow<=colup)
+    {
+    for(int j=rowup;j>=rowlow;j--)
+    {
+        arr[k++]=mat[j][collow];
+        
+    }
+    printf("\n");
+    collow+=1;
+    }
+}while(collow!=colup+1 );
+int k1=0;
+for(int i=0;i<col;i++)
+{
+    for(int j=0;j<row;j++)
+    {
+        printf("%d ",arr[k1]);
+        k1+=1;
+    }
+    printf("\n");
+}
+}
+
